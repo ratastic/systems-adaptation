@@ -27,6 +27,16 @@ public class BraStrapLogic : MonoBehaviour
         newPos.z = 0;
 
         UpdateStrap(newPos);
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(newPos, .2f);
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.gameObject != gameObject)
+            {
+                UpdateStrap(collider.transform.position);
+                return;
+            }
+        }
     }
 
     private void OnMouseUp()
