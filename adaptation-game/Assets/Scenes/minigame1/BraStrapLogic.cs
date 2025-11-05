@@ -34,9 +34,20 @@ public class BraStrapLogic : MonoBehaviour
             if (collider.gameObject != gameObject)
             {
                 UpdateStrap(collider.transform.position);
+                if (transform.name.Equals(collider.transform.name))
+                {
+                    collider.GetComponent<BraStrapLogic>()?.Done();
+                    Done();
+                }
                 return;
             }
         }
+    }
+    
+    void Done()
+    {
+        Debug.Log("bra clasped");
+        Destroy(this);
     }
 
     private void OnMouseUp()
