@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/minigame1/FirstVignette.unity
+    guid: d5ed95859daba4fa9b145d1f3df2cacd
+  - enabled: 1
+    path: Assets/Scenes/minigame2/SecondVignette.unity
+    guid: 502433804655045f1a9425a1559b642a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
