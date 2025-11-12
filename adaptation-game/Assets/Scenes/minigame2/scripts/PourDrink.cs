@@ -5,14 +5,14 @@ using System.Collections.Generic;
 public class PourDrink : MonoBehaviour
 {
     public Collider2D glassCol;
-    private Collider2D bottleCol;
+    public Collider2D bottleCol;
     public Animator drinkingWoman;
     public AnimationClip drinkingClip;
     public bool drinkFinished;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        bottleCol = GetComponent<Collider2D>();
+        //bottleCol = GetComponent<Collider2D>();
         drinkFinished = false;
     }
 
@@ -34,7 +34,7 @@ public class PourDrink : MonoBehaviour
     public IEnumerator Drinking()
     {
         drinkingWoman.SetBool("canDrink", true);
-        yield return new WaitForSeconds(drinkingClip.length);
+        yield return new WaitForSeconds(6f);
         drinkFinished = true;
     }
 

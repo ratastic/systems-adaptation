@@ -7,6 +7,7 @@ public class BraStrapLogic : MonoBehaviour
     Vector3 startPoint;
     Vector3 startPos;
     private SpriteRenderer sr;
+    public GameObject startText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,6 +28,8 @@ public class BraStrapLogic : MonoBehaviour
         newPos.z = 0;
 
         UpdateStrap(newPos);
+
+        Destroy(startText);
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(newPos, .2f);
         foreach (Collider2D collider in colliders)
