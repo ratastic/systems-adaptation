@@ -16,6 +16,7 @@ public class MoveCam : MonoBehaviour
     private int moveAmount = 1;
     private float mouseSensitivity = 0.5f;
 
+    [Header("npc sprite")]
     public SpriteRenderer idleSprite;
     public Sprite poseSprite;
     private Sprite startSprite;
@@ -27,6 +28,12 @@ public class MoveCam : MonoBehaviour
     public float maxX = 10f;
     public float minY = -3f;
     public float maxY = 3f;
+
+    private Animator anim;
+    private bool canMoveCam;
+    public GameObject nextButton;
+
+    private float timer;
         
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,12 +41,16 @@ public class MoveCam : MonoBehaviour
         camScreen = GetComponent<Transform>();
         startPos = camScreen.position;
         inFrame = false;
+        canMoveCam = true;
+        nextButton.SetActive(false);
         
         Vector3 mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         previousMousePos = mouseStart;
 
         startSprite = idleSprite.sprite;
         questionText.SetActive(true);
+
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -60,6 +71,7 @@ public class MoveCam : MonoBehaviour
 
             if (inFrame == true)
             {
+                Debug.Log("can take picture");
                 TakePicture();
             }
         } else
@@ -71,7 +83,7 @@ public class MoveCam : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (Input.GetMouseButton(0))
+        if (canMoveCam == true && Input.GetMouseButton(0))
         {
             currentMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3 delta = currentMousePos - previousMousePos;
@@ -114,6 +126,18 @@ public class MoveCam : MonoBehaviour
 
     private void TakePicture()
     {
-        Debug.Log("can take picture");
+        canMoveCam = false;
+        if (Input.GetMouseButtonDown(0))
+        {
+            anim.SetBool("canTakePic", true);
+
+            StartCoroutine(Countdown());
+        }
     }
+    IEnumerator Countdown()
+    {
+        yield return new WaitForSeconds(2f);
+        nextButton.SetActive(true);
+    }
+    
 }
