@@ -157,19 +157,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9079835260401019514, guid: 6470f639a045541539d965a3d0149d46, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9079835260401019514, guid: 6470f639a045541539d965a3d0149d46, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9079835260401019514, guid: 6470f639a045541539d965a3d0149d46, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9079835260401019514, guid: 6470f639a045541539d965a3d0149d46, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9079835260401019514, guid: 6470f639a045541539d965a3d0149d46, type: 3}
       propertyPath: m_SizeDelta.x
@@ -189,7 +189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9079835260401019514, guid: 6470f639a045541539d965a3d0149d46, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9719.999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9079835260401019514, guid: 6470f639a045541539d965a3d0149d46, type: 3}
       propertyPath: m_LocalRotation.w
@@ -209,11 +209,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9079835260401019514, guid: 6470f639a045541539d965a3d0149d46, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 776
+      value: -210
       objectReference: {fileID: 0}
     - target: {fileID: 9079835260401019514, guid: 6470f639a045541539d965a3d0149d46, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 443
+      value: -113
       objectReference: {fileID: 0}
     - target: {fileID: 9079835260401019514, guid: 6470f639a045541539d965a3d0149d46, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -710,7 +710,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 3094, y: 1964}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1047,7 +1047,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
