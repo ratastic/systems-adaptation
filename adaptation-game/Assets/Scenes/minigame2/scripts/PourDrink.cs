@@ -9,10 +9,12 @@ public class PourDrink : MonoBehaviour
     public Animator drinkingWoman;
     public AnimationClip drinkingClip;
     public bool drinkFinished;
+    private AudioSource pour;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //bottleCol = GetComponent<Collider2D>();
+        pour = GetComponent<AudioSource>();
         drinkFinished = false;
     }
 
@@ -34,6 +36,7 @@ public class PourDrink : MonoBehaviour
     public IEnumerator Drinking()
     {
         drinkingWoman.SetBool("canDrink", true);
+        pour.Play();
         yield return new WaitForSeconds(6f);
         drinkFinished = true;
     }

@@ -34,11 +34,14 @@ public class MoveCam : MonoBehaviour
     public GameObject nextButton;
 
     private float timer;
+
+    private AudioSource camShutter;
         
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         camScreen = GetComponent<Transform>();
+        camShutter = GetComponent<AudioSource>();
         startPos = camScreen.position;
         inFrame = false;
         canMoveCam = true;
@@ -130,6 +133,7 @@ public class MoveCam : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             anim.SetBool("canTakePic", true);
+            camShutter.Play();
 
             StartCoroutine(Countdown());
         }

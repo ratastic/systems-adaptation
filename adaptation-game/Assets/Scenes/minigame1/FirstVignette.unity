@@ -3640,6 +3640,7 @@ MonoBehaviour:
   grid1: {fileID: 125800421}
   grid2: {fileID: 1406136065}
   nextButton: {fileID: 1793259504}
+  claspNoise: {fileID: 0}
 --- !u!114 &1123007988
 MonoBehaviour:
   m_ObjectHideFlags: 0

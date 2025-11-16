@@ -16,6 +16,8 @@ public class FirstWinLogic : MonoBehaviour
     public GameObject grid2;
     public GameObject nextButton;
 
+    //public AudioSource claspNoise;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,6 +29,16 @@ public class FirstWinLogic : MonoBehaviour
     void Update()
     {
         BraClasped();
+
+        // if (leftStrap.IsTouching(leftSnap))
+        // {
+        //     claspNoise.Play();
+        // }
+        
+        // if (rightStrap.IsTouching(rightSnap))
+        // {
+        //     claspNoise.Play();
+        // }
     }
 
     public void BraClasped()
