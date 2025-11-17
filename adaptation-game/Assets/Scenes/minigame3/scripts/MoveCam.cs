@@ -32,9 +32,6 @@ public class MoveCam : MonoBehaviour
     private Animator anim;
     private bool canMoveCam;
     public GameObject nextButton;
-
-    private float timer;
-
     private AudioSource camShutter;
         
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -140,8 +137,8 @@ public class MoveCam : MonoBehaviour
     }
     IEnumerator Countdown()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         nextButton.SetActive(true);
+        Destroy(this);
     }
-    
 }
