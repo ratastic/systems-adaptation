@@ -16,11 +16,16 @@ public class FirstWinLogic : MonoBehaviour
     public GameObject grid2;
     public GameObject nextButton;
 
-    //public AudioSource claspNoise;
+    private AudioSource claspNoise;
+
+    private bool rightSoundPlayed = false;
+    private bool leftSoundPlayed = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        claspNoise = GetComponent<AudioSource>();
+
         grid1.SetActive(true);
         grid2.SetActive(false);
     }
@@ -30,15 +35,17 @@ public class FirstWinLogic : MonoBehaviour
     {
         BraClasped();
 
-        // if (leftStrap.IsTouching(leftSnap))
-        // {
-        //     claspNoise.Play();
-        // }
+        if (!rightSoundPlayed && rightStrap.IsTouching(rightSnap))
+        {
+            rightSoundPlayed = true;
+            claspNoise.Play();
+        }
         
-        // if (rightStrap.IsTouching(rightSnap))
-        // {
-        //     claspNoise.Play();
-        // }
+        if (!leftSoundPlayed && leftStrap.IsTouching(leftSnap))
+        {
+            leftSoundPlayed = true;
+            claspNoise.Play();
+        }
     }
 
     public void BraClasped()

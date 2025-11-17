@@ -10,6 +10,7 @@ public class PourDrink : MonoBehaviour
     public AnimationClip drinkingClip;
     public bool drinkFinished;
     private AudioSource pour;
+    private bool pourSoundPlayed = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,9 +27,11 @@ public class PourDrink : MonoBehaviour
 
     public void Pouring()
     {
-        if (bottleCol.IsTouching(glassCol))
+        if (bottleCol.IsTouching(glassCol) && !pourSoundPlayed)
         {
             Debug.Log("drink poured");
+            pourSoundPlayed = true;
+            pour.Play();
             StartCoroutine(Drinking());
         }
     }
@@ -36,7 +39,6 @@ public class PourDrink : MonoBehaviour
     public IEnumerator Drinking()
     {
         drinkingWoman.SetBool("canDrink", true);
-        pour.Play();
         yield return new WaitForSeconds(6f);
         drinkFinished = true;
     }

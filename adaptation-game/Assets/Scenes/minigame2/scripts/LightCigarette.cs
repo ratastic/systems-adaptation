@@ -10,10 +10,10 @@ public class LightCigarette : MonoBehaviour
     public AnimationClip smokingClip;
     public bool isBurned;
     private AudioSource lighterNoise;
+    private bool lightSoundPlayed = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //lighter = GetComponent<Collider2D>();
         lighterNoise = GetComponent<AudioSource>();
         isBurned = false;
     }
@@ -26,23 +26,19 @@ public class LightCigarette : MonoBehaviour
 
     public void Lighting()
     {
-        if (lighter.IsTouching(cig))
+        if (lighter.IsTouching(cig) && !lightSoundPlayed)
         {
             Debug.Log("lit cig");
+            lightSoundPlayed = true;
+            lighterNoise.Play();
             StartCoroutine(Smoking());
         }
     }
 
     public IEnumerator Smoking()
     {
-        lighterNoise.Play();
         smokingWoman.SetBool("canSmoke", true);
         yield return new WaitForSeconds(6f);
         isBurned = true;
     }
-
-    // void FixedUpdate()
-    // {
-    //     StopAllCoroutines();
-    // }
 }
